@@ -8,11 +8,9 @@ class Node
 		left = right = null; 
 	} 
 } 
-
 class BinaryTree 
 {  
 	Node root; 
-
 	public BinaryTree() 
 	{ 
 		root = null; 
@@ -31,14 +29,12 @@ class BinaryTree
 		else
 		{ 
 			int lheight = height(root.left); 
-			int rheight = height(root.right); 
-			
+			int rheight = height(root.right); 		
 			if (lheight > rheight) 
 				return(lheight+1); 
 			else return(rheight+1); 
 		} 
 	} 
-
 	void printGivenLevel (Node root ,int level) 
 	{ 
 		if (root == null) 
@@ -50,14 +46,12 @@ class BinaryTree
                                         printGivenLevel(root.right, level-1); 
 			printGivenLevel(root.left, level-1); 
                            }
-
 		else if (level%2==1&&level > 1) 
 		{ 
 			printGivenLevel(root.left, level-1); 
 			printGivenLevel(root.right, level-1); 
 		} 
 	} 
-	
 	public static void main(String args[]) 
 	{ 
 	BinaryTree tree = new BinaryTree(); 
@@ -66,7 +60,6 @@ class BinaryTree
 	tree.root.right= new Node(3); 
 	tree.root.left.left= new Node(4); 
 	tree.root.left.right= new Node(5); 
-		
 	System.out.println("Level order traversal of binary tree is "); 
 	tree.printLevelOrder(); 
 	} 
